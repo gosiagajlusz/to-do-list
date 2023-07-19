@@ -1,0 +1,11 @@
+.list__item {
+    color:black;
+    font-weight: 400;
+}
+
+.list__item--done {
+    color:rgb(171, 31, 31);
+    font-weight:400;
+    text-decoration: line-through;
+}
+

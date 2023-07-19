@@ -12,7 +12,7 @@
     let render = () => {
         let htmlString = "";
         for (const task of tasks) {
-            htmlString += `<li>
+            htmlString += `<li class="list__item${task.done ? "list__item--done" : ""}">
             ${task.content}
     </li>`;
         }

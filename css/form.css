@@ -6,4 +6,11 @@ html {
     box-sizing: inherit;
 }
 
+.form__li__done {
+    text-decoration: line-through;
+    color:black;
+}
+.form__li {
+    color:black;
+}
 
