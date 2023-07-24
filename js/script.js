@@ -16,26 +16,31 @@
            <button class="js-remove">usuń</button>
             ${task.content}
     </li>`;
-        }  
-    document.querySelector(".js-tasks").innerHTML = htmlString
-};
+        }
+        document.querySelector(".js-tasks").innerHTML = htmlString
+    };
+
     const removeButtons = document.querySelectorAll(".js-remove");
-    removeButtons.forEach((removeButton, index) => {
-        removeButton.addEventListener("click", () => {
-            tasks.splice(index, 1);
-            render();
+    console.log(removeButtons);
+//on tu ma kolejny wąs zamykający- wysledzic co to za wąs
+
+    // removeButtons.forEach((removeButton, index) => {
+    //     removeButton.addEventListener("click", () => {
+    //         tasks.splice(index, 1);
+    //         render();
+    //     });
+    // });
+
+    const addNewTask = () => {
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        tasks.push({
+            content: newTaskContent,
         });
-    });
+        render();
+    };
+
     onFormSubmit = (event) => {
         event.preventDefault();
-        const addNewTask = () => {
-            const newTaskContent = document.querySelector(".js-newTask").value.trim();
-            tasks.push({
-                content: newTaskContent,
-            });
-            render();
-        };
-
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
         if (newTaskContent === "") {
             return;
