@@ -9,6 +9,21 @@
             done: true,
         },
     ];
+    const addNewTask = () => {
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        tasks.push({
+            content: newTaskContent,
+        });
+        render();
+    };
+
+    removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    }
+
+
+
     const render = () => {
         let htmlString = "";
         for (const task of tasks) {
@@ -18,20 +33,20 @@
     </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString
-    };
-
-    const removeButtons = document.querySelectorAll(".js-remove");
-    console.log(removeButtons);
 
 
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
 
-    const addNewTask = () => {
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        tasks.push({
-            content: newTaskContent,
+            });
         });
-        render();
     };
+
+
+    
+
 
     onFormSubmit = (event) => {
         event.preventDefault();
