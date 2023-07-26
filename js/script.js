@@ -9,7 +9,7 @@
             done: true,
         },
     ];
-    let render = () => {
+    const render = () => {
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `<li class="list__item ${task.done ? "list__item--done" : ""}">
@@ -22,14 +22,8 @@
 
     const removeButtons = document.querySelectorAll(".js-remove");
     console.log(removeButtons);
-//on tu ma kolejny wąs zamykający- wysledzic co to za wąs
 
-    // removeButtons.forEach((removeButton, index) => {
-    //     removeButton.addEventListener("click", () => {
-    //         tasks.splice(index, 1);
-    //         render();
-    //     });
-    // });
+
 
     const addNewTask = () => {
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
