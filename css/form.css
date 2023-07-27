@@ -6,6 +6,11 @@ html {
     box-sizing: inherit;
 }
 
+.form {
+    background-color: #fbfcfc;
+}
+
+
 .form__li__done {
     text-decoration: line-through;
     color:black;
@@ -14,3 +19,21 @@ html {
     color:black;
 }
 
+.form__h1 {
+    color:black;
+    font-weight:bold;
+}
+
+.form__label{
+    font-weight: bold;    
+}
+
+.form__fieldsetLabel {
+    background-color: #f7f6f8;
+}
+
+.form__addTaskButton {
+    background-color:#036060;
+    color:white;
+    padding:8px;
+}

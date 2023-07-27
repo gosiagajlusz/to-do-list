@@ -6,14 +6,37 @@
     <title>Lista zadań</title>
     <link href="css/form.css" rel="stylesheet">
     <link href="css/list.css" rel="stylesheet">
-    <script defer src="js/script.js"></script>
+    <link href="css/body.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
 
+    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <form class="js-form">
-        <input class="js-newTask">
-        <button class="js-button">dodaj zadanie</button>
+<body class="body">
+    <h1 class="form__h1">Lista zadań</h1>
+
+    <form class="js-form form">
+        <fieldset class="form__fieldsetLabel">
+        <label class="form__label">Dodaj nowe zadanie</label></fieldset>
+        <fieldset class="form__fieldsetInput">
+        <input class="js-newTask" placeholder="Co jest do zrobienia?">
+        <button class="js-button form__addTaskButton">Dodaj zadanie</button>
+    </fieldset>
+    <fieldset class="form__fieldsetTitle">
+        Lista zadań
+        </fieldset>
+        <fieldset class="form__fieldsetList">
+
 <ul class="js-tasks"></ul>
+</fieldset>
     </form>
 </body>
 </html>
