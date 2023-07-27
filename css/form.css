@@ -8,6 +8,10 @@ html {
 
 .form {
     background-color: #fbfcfc;
+       max-width: 50%;
+       display:grid;
+
+
 }
 
 
@@ -30,10 +34,25 @@ html {
 
 .form__fieldsetLabel {
     background-color: #f7f6f8;
+    border:none;
+    margin-top:5px;
+    display:grid;
 }
+
+.form__fieldsetInput {
+
+}
+
+
 
 .form__addTaskButton {
     background-color:#036060;
     color:white;
-    padding:8px;
+    padding:4px;
+    border:none;
+    margin-top:5px;
+}
+
+.form__input {
+    padding:4px;
 }

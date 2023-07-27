@@ -1,0 +1,9 @@
+.buttons__remove {
+    background-color:red;
+    color:white;
+}
+
+.buttons__done {
+    background-color: green;
+    color:white;
+}

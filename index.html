@@ -8,6 +8,8 @@
     <link href="css/list.css" rel="stylesheet">
     <link href="css/body.css" rel="stylesheet">
     <link href="css/buttons.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+
 
     <script defer src="js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +23,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-    <h1 class="form__h1">Lista zadań</h1>
-
+    <header class="header">
+    <h1 class="header__h1">Lista zadań</h1>
+</header>
     <form class="js-form form">
         <fieldset class="form__fieldsetLabel">
         <label class="form__label">Dodaj nowe zadanie</label></fieldset>
         <fieldset class="form__fieldsetInput">
-        <input class="js-newTask" placeholder="Co jest do zrobienia?">
+        <input class="js-newTask form__input" placeholder="Co jest do zrobienia?" autofocus>
         <button class="js-button form__addTaskButton">Dodaj zadanie</button>
     </fieldset>
     <fieldset class="form__fieldsetTitle">
