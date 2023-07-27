@@ -26,18 +26,7 @@
         tasks[index].done = !tasks[index].done;
         render();
     }
-
-    const render = () => {
-        let htmlString = "";
-        for (const task of tasks) {
-            htmlString += `<li class="list__item ${task.done ? "list__item--done" : ""}">
-           <button class="js-done">Zrobione</button>
-            <button class="js-remove">usuń</button>
-            ${task.content}
-    </li>`;
-        }
-        document.querySelector(".js-tasks").innerHTML = htmlString
-
+    const bindingEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
@@ -52,6 +41,21 @@
 
             });
         });
+    }
+
+
+    const render = () => {
+        let htmlString = "";
+        for (const task of tasks) {
+            htmlString += `<li class="list__item ${task.done ? "list__item--done" : ""}">
+           <button class="js-done">Zrobione</button>
+            <button class="js-remove">usuń</button>
+            ${task.content}
+    </li>`;
+        }
+        document.querySelector(".js-tasks").innerHTML = htmlString
+
+        bindingEvents();
     };
 
 
