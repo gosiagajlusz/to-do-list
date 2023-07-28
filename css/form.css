@@ -7,11 +7,10 @@ html {
 }
 
 .form {
-    background-color: #fbfcfc;
-       max-width: 50%;
+    background-color: #ffffff;
+       max-width: 70%;
        display:grid;
-
-
+       
 }
 
 
@@ -35,14 +34,36 @@ html {
 .form__fieldsetLabel {
     background-color: #f7f6f8;
     border:none;
-    margin-top:5px;
-    display:grid;
+    display:flex;
+    justify-content: center;
 }
 
 .form__fieldsetInput {
+    background-color: #f7f6f8;
+    border:none;
+    display:flex;
+    justify-content: center;
 
 }
 
+.form__fieldsetTitle {
+    background-color: #f7f6f8;
+    border:none;
+    display:flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.form__fieldsetList {
+    background-color: #f7f6f8;
+    border:none;
+    display:flex;
+    justify-content: center;
+   
+}
+.form__taskList{
+    
+}
 
 
 .form__addTaskButton {

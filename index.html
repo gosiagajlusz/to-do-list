@@ -6,9 +6,11 @@
     <title>Lista zadań</title>
     <link href="css/form.css" rel="stylesheet">
     <link href="css/list.css" rel="stylesheet">
-    <link href="css/body.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
     <link href="css/buttons.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
+    <link href="css/body.css" rel="stylesheet">
+
 
 
     <script defer src="js/script.js"></script>
@@ -23,7 +25,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-    <header class="header">
+    <div class="container">
+    <header class="container__header">
     <h1 class="header__h1">Lista zadań</h1>
 </header>
     <form class="js-form form">
@@ -34,12 +37,13 @@
         <button class="js-button form__addTaskButton">Dodaj zadanie</button>
     </fieldset>
     <fieldset class="form__fieldsetTitle">
-        Lista zadań
+        <p class="form__taskList">Lista zadań</p>
         </fieldset>
         <fieldset class="form__fieldsetList">
 
 <ul class="js-tasks"></ul>
 </fieldset>
     </form>
+</div>
 </body>
 </html>
