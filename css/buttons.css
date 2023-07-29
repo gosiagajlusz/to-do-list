@@ -1,9 +1,15 @@
 .buttons__remove {
     background-color:red;
     color:white;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    padding:2px;
 }
 
 .buttons__done {
     background-color: green;
     color:white;
+    width: 20px;
+    height:20px;
 }
