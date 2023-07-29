@@ -13,48 +13,83 @@ html {
     min-width: 50%;
 }
 
-.form__fieldsetLabel,
-.form__fieldsetTitle,
+.form__header {
+    background-color: #efebeb;
+    border: none;
+    display: flex;
+    margin: 1px;
+}
+
+/* Lista zadań */
+.form__h1 {}
+
+
 .form__fieldsetInput {
     background-color: hsl(0, 0%, 100%);
     border: none;
     display: flex;
-    /* justify-content: flex-start; */
     margin: 1px;
+    justify-content: space-between;
 }
 
-.form__fieldsetList {
+.form__fieldsetTitle {
     background-color: hsl(0, 0%, 100%);
     border: none;
     display: flex;
+    margin: 5px 1px 1px 1px;
+    padding-left:15px;
+
+}
+
+/* obszar w ktorym sie tworzy lista wraz z batonami */
+.form__fieldsetList {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    display: grid;
+    
+    margin: 1px;
+    
+}
+
+/* lista, która się tworzy wraz z buttonami */
+.form__ul {
+    display:grid;
+
+}
+
+
+
+.form__fieldsetLabel {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
     margin: 1px;
 
-
-
 }
 
-
-
-.form__fieldsetTitle {
-
+.form__taskList {
     font-weight: bold;
-    margin-top: 10px;
+    font-size: 20px;
 }
-
-
-.form__taskList {}
 
 
 .form__addTaskButton {
     background-color: #036060;
     color: white;
-    padding: 4px;
+    padding: 7px;
     border: none;
-    margin-top: 5px;
+    margin: 7px;
 }
 
 .form__input {
-    padding: 4px;
+    padding: 7px;
+    margin: 7px;
 }
 
 .form__li__done {
@@ -73,4 +108,5 @@ html {
 
 .form__label {
     font-weight: bold;
+    font-size: 20px;
 }

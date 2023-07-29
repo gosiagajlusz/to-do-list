@@ -3,8 +3,11 @@
     color:white;
     width: 20px;
     height:20px;
-    text-align: center;
-    padding:2px;
+    display:grid;
+    justify-content: center;
+    justify-items: center;
+    padding:3px;
+    
 }
 
 .buttons__done {
@@ -12,4 +15,7 @@
     color:white;
     width: 20px;
     height:20px;
+    display:grid;
+
+
 }

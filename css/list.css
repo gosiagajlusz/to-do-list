@@ -9,11 +9,13 @@ html {
 .list__item {
     color:black;
     font-weight: 400;
+    display:flex;
 }
 
 .list__item--done {
     color:black;
     font-weight:400;
     text-decoration: line-through;
+    display:flex;
 }
 

@@ -8,24 +8,12 @@ html {
 
 .container {
     font-family: 'Montserrat',sans-serif;
-    /* display:grid;
+    display:grid;
     justify-items: center;
-    grid-template-areas: 
+    /* grid-template-areas: 
     "header ... ..."
     "main main main "
     "tt tt tt tt"
     "ll ll ll ll "; */
 }
 
-.container__header {
-    /* Lista zadań  */
-display:grid;
-grid-row-start: 1;
-grid-column-start:1;
-
-}
-
-/* .container__h1 {
-    display:grid;
-    grid-start:1 1;
-} */
