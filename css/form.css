@@ -2,64 +2,75 @@ html {
     box-sizing: border-box;
 }
 
-*::after,::before  {
+*::after,
+::before {
     box-sizing: inherit;
 }
 
 .form {
     background-color: #efebeb;
-    background-color: ;
-       max-width: 70%;
-       display:grid;
-       
+    max-width: 60%;
+    min-width: 50%;
 }
 
-
-.form__li__done {
-    text-decoration: line-through;
-    color:black;
-}
-.form__li {
-    color:black;
-}
-
-.form__h1 {
-    color:black;
-    font-weight:bold;
+.form__fieldsetLabel,
+.form__fieldsetTitle,
+.form__fieldsetInput {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    display: flex;
+    /* justify-content: flex-start; */
+    margin: 1px;
 }
 
-.form__label{
-    font-weight: bold;    
+.form__fieldsetList {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    display: flex;
+    margin: 1px;
+
+
+
 }
 
-.form__fieldsetLabel , .form__fieldsetList ,.form__fieldsetTitle,.form__fieldsetInput {
-    background-color: #f7f6f8;
-    border:none;
-    display:flex;
-    justify-content: center;
-    margin:5px;
-}
 
 
 .form__fieldsetTitle {
-    
+
     font-weight: bold;
+    margin-top: 10px;
 }
 
 
-.form__taskList{
-
-}
+.form__taskList {}
 
 
 .form__addTaskButton {
-    background-color:#036060;
-    color:white;
-    padding:4px;
-    border:none;
-    margin-top:5px;
+    background-color: #036060;
+    color: white;
+    padding: 4px;
+    border: none;
+    margin-top: 5px;
 }
 
 .form__input {
-    padding:4px;
+    padding: 4px;
+}
+
+.form__li__done {
+    text-decoration: line-through;
+    color: black;
+}
+
+.form__li {
+    color: black;
+}
+
+.form__h1 {
+    color: black;
+    font-weight: bold;
+}
+
+.form__label {
+    font-weight: bold;
 }
