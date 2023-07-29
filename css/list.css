@@ -6,16 +6,19 @@ html {
     box-sizing: inherit;
 }
 
+
+
 .list__item {
-    color:black;
-    font-weight: 400;
-    display:flex;
+    display:grid;
+    /* grid-column-start:2;
+    grid-column-span:4; */
+    grid-column-start:2;
 }
 
 .list__item--done {
     color:black;
     font-weight:400;
     text-decoration: line-through;
-    display:flex;
+    display:grid;
 }
 

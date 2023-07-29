@@ -27,9 +27,9 @@ html {
 .form__fieldsetInput {
     background-color: hsl(0, 0%, 100%);
     border: none;
-    display: flex;
     margin: 1px;
-    justify-content: space-between;
+    display:grid;
+    grid-template-columns: 1fr 0.5fr;
 }
 
 .form__fieldsetTitle {
@@ -45,18 +45,23 @@ html {
 .form__fieldsetList {
     background-color: hsl(0, 0%, 100%);
     border: none;
-    display: grid;
-    
+    display: grid;    
     margin: 1px;
     
 }
 
 /* lista, która się tworzy wraz z buttonami */
 .form__ul {
+    list-style-type: none;
     display:grid;
+    /* czemu nie działa grid-template-columns: 20px auto-fill 20px; */
+    grid-template-areas: 
+    "done text basket";
 
+    /* grid-template-columns: 20px, auto-fill, 20px; */
+/* justify-content: space-between; */
+    padding:3px;
 }
-
 
 
 .form__fieldsetLabel {
@@ -90,15 +95,6 @@ html {
 .form__input {
     padding: 7px;
     margin: 7px;
-}
-
-.form__li__done {
-    text-decoration: line-through;
-    color: black;
-}
-
-.form__li {
-    color: black;
 }
 
 .form__h1 {

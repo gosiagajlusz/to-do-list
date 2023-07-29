@@ -48,17 +48,18 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString += 
-            `<li 
-            class="list__item ${task.done ? "form__li__done": ""}"
-            >
-            
+            `        
            <button class="js-done buttons__done">
-           ${task.done ? "✔" : "   "}
-           
+           ${task.done ? "✔" : "   "}           
            </button>
+
+           <li 
+            class="list__item ${task.done ? "list__item--done": ""}"
+            >${task.content}</li>
+            
+            
             <button class="js-remove buttons__remove">🗑</button>
-            ${task.content}
-    </li>`;
+            `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString
 
