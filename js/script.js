@@ -9,8 +9,15 @@
             done: true,
         },
     ];
+
+    const newTaskInput = document.querySelector(".js-newTask")
+    const cleanInputFocus = () => {
+        
+        newTaskInput.value = "";
+        newTaskInput.focus();
+    }
+
     const addNewTask = () => {
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
         tasks.push({
             content: newTaskContent,
         });
@@ -26,13 +33,7 @@
         tasks[index].done = !tasks[index].done;
         render();
     }
-const cleanInputFocus = ()=> {
-    newTaskContent.value = "";
-    newTaskContent.focus();
-
-}
-
-
+    
     const bindingEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
@@ -50,21 +51,19 @@ const cleanInputFocus = ()=> {
         });
     }
 
-
     const render = () => {
         let htmlString = "";
         for (const task of tasks) {
-            htmlString += 
-            `        
+            htmlString +=
+                `        
            <button class="js-done buttons__done">
            ${task.done ? "✔" : "   "}           
            </button>
 
            <li 
-            class="list__item ${task.done ? "list__item--done": ""}"
+            class="list__item ${task.done ? "list__item--done" : ""}"
             >${task.content}</li>
-            
-            
+                        
             <button class="js-remove buttons__remove">🗑</button>
             `;
         }
@@ -73,20 +72,15 @@ const cleanInputFocus = ()=> {
         bindingEvents();
     };
 
-
-
-
-
     onFormSubmit = (event) => {
         event.preventDefault();
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTaskContent = newTaskInput.value.trim();
         if (newTaskContent === "") {
             return;
         }
         addNewTask(newTaskContent);
-        cleanInputFocus();
+        cleanInputFocus(newTaskInput);
     };
-
 
     const init = () => {
         render();
@@ -97,9 +91,3 @@ const cleanInputFocus = ()=> {
 };
 
 
-
-// kiedy? co ma się robić? jakimi elementami ma się to robić?
-
-// -po kliknięciu w przycisk,więc do onFormSubmit bym to przypieła, 
-// -czyścić formularz czyli (będzie potrzebowała znać const newTaskContent..) newTaskContent.value = "" 
-// -focusować na newtaskContent,czyli  newtaskContent.focus()
