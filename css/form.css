@@ -21,22 +21,17 @@ html {
 }
 
 
-
 .form__fieldsetInput {
-    background-color: hsl(0, 0%, 100%);
+    background-color: #ffffff;
     border: none;
     margin: 1px;
     display: flex;
     justify-content: space-between;
-    /* display:grid;
-    grid-template-columns: 1fr 0.5fr; */
 }
 
 .form__input {
     flex-grow: 3;
 }
-
-
 
 .form__fieldsetTitle {
     background-color: hsl(0, 0%, 100%);
@@ -44,7 +39,6 @@ html {
     display: flex;
     margin: 5px 1px 1px 1px;
     padding-left: 15px;
-
 }
 
 /* obszar w ktorym sie tworzy lista wraz z batonami */
@@ -59,7 +53,7 @@ html {
 .form__ul {
     list-style-type: none;
     display: grid;
-    /* czemu nie działa grid-template-columns: 20px auto-fill 20px; */
+    /* czemu nie działa grid-template-columns: 30px auto-fill 30px; */
     grid-template-areas:
         "done text basket";
     grid-template-columns: 30px 1fr 30px;
@@ -114,19 +108,16 @@ html {
     .form__fieldsetInput {
         flex-direction: column;
         flex-wrap: wrap;
-
     }
 
     ;
-    /* .form__input {
-        max-width:50%;
-        flex-grow:1;
-    }; */
-    /* .form__addTaskButton{
-        width:100%;
-    } */
 
 }
 
-@media (max-width: 767px){
-.form {min-width:90%;}};
+@media (max-width: 767px) {
+    .form {
+        min-width: 90%;
+    }
+}
+
+;

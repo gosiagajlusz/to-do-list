@@ -2,14 +2,13 @@ html {
     box-sizing: border-box;
 }
 
-*::after,::before  {
+*::after,
+::before {
     box-sizing: inherit;
 }
 
 .container {
-    font-family: 'Montserrat',sans-serif;
-    display:grid;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
     justify-items: center;
-    
 }
-

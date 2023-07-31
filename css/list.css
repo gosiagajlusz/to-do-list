@@ -2,19 +2,19 @@ html {
     box-sizing: border-box;
 }
 
-*::after,::before  {
+*::after,
+::before {
     box-sizing: inherit;
 }
 
 .list__item {
-    display:grid;
-        grid-column-start:2;
+    display: grid;
+    grid-column-start: 2;
 }
 
 .list__item--done {
-    color:black;
-    font-weight:400;
+    color: black;
+    font-weight: 400;
     text-decoration: line-through;
-    display:grid;
+    display: grid;
 }
-
