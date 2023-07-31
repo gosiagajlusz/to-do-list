@@ -57,9 +57,8 @@ html {
     /* czemu nie działa grid-template-columns: 20px auto-fill 20px; */
     grid-template-areas: 
     "done text basket";
+    grid-template-columns: 30px 1fr 30px;
 
-    /* grid-template-columns: 20px, auto-fill, 20px; */
-/* justify-content: space-between; */
     padding:3px;
 }
 
