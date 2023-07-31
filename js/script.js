@@ -1,14 +1,14 @@
 {
-    const tasks = [
-        {
-            content: "kupić cokoły",
-            done: false
-        },
-        {
-            content: "zjeść cukinie",
-            done: true,
-        },
-    ];
+    // const tasks = [
+    //     {
+    //         content: "kupić cokoły",
+    //         done: false
+    //     },
+    //     {
+    //         content: "zjeść cukinie",
+    //         done: true,
+    //     },
+    // ];
 
     const newTaskInput = document.querySelector(".js-newTask")
     const cleanInputFocus = () => {
