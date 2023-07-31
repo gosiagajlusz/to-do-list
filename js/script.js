@@ -26,6 +26,13 @@
         tasks[index].done = !tasks[index].done;
         render();
     }
+const cleanInputFocus = ()=> {
+    newTaskContent.value = "";
+    newTaskContent.focus();
+
+}
+
+
     const bindingEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
@@ -77,6 +84,7 @@
             return;
         }
         addNewTask(newTaskContent);
+        cleanInputFocus();
     };
 
 
@@ -87,3 +95,11 @@
     };
     init();
 };
+
+
+
+// kiedy? co ma się robić? jakimi elementami ma się to robić?
+
+// -po kliknięciu w przycisk,więc do onFormSubmit bym to przypieła, 
+// -czyścić formularz czyli (będzie potrzebowała znać const newTaskContent..) newTaskContent.value = "" 
+// -focusować na newtaskContent,czyli  newtaskContent.focus()
