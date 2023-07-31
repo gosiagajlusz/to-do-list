@@ -1,4 +1,5 @@
 .body{
     background-color: #efebeb;
+    word-break: break-word;
     /* display:grid; */
 }

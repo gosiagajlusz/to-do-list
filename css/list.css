@@ -6,13 +6,9 @@ html {
     box-sizing: inherit;
 }
 
-
-
 .list__item {
     display:grid;
-    /* grid-column-start:2;
-    grid-column-span:4; */
-    grid-column-start:2;
+        grid-column-start:2;
 }
 
 .list__item--done {

@@ -10,10 +10,6 @@ html {
     font-family: 'Montserrat',sans-serif;
     display:grid;
     justify-items: center;
-    /* grid-template-areas: 
-    "header ... ..."
-    "main main main "
-    "tt tt tt tt"
-    "ll ll ll ll "; */
+    
 }
 
