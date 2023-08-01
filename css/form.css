@@ -77,7 +77,13 @@
     padding: 11px;
     border: none;
     margin: 7px;
+    transition: background 0.5s 0.5s linear;
 }
+
+.form__addTaskButton:hover{
+    background-color:rgb(98, 154, 154);
+}
+
 
 .form__input {
     padding: 11px;
