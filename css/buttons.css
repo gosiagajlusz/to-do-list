@@ -1,18 +1,21 @@
 .buttons__remove {
     background-color: red;
     color: white;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: grid;
     justify-content: center;
     justify-items: center;
     padding: 3px;
+    grid-column-start:3;
 }
 
 .buttons__done {
     background-color: green;
     color: white;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: grid;
+    justify-items: center;
+    grid-column-start: 1;
 }

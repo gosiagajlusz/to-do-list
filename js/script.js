@@ -1,14 +1,11 @@
 {
-    // const tasks = [
-    //     {
-    //         content: "kupić cokoły",
-    //         done: false
-    //     },
-    //     {
-    //         content: "zjeść cukinie",
-    //         done: true,
-    //     },
-    // ];
+    const tasks = [
+        
+        {
+            content: "zjeść cukinie",
+            done: true,
+        },
+    ];
 
     const newTaskInput = document.querySelector(".js-newTask")
     const cleanInputFocus = () => {
@@ -55,17 +52,15 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString +=
-                `        
-           <button class="js-done buttons__done">
-           ${task.done ? "✔" : "   "}           
-           </button>
-
-           <li 
-            class="list__item ${task.done ? "list__item--done" : ""}"
-            >${task.content}</li>
-                        
+                `<li 
+                class="list__item ${task.done ? "list__item--done" : ""}"
+                >
+                <span class="list__taskContent">${task.content} </span>       
+            <button class="js-done buttons__done">
+            ${task.done ? "✔" : "   "}           
+            </button>         
             <button class="js-remove buttons__remove">🗑</button>
-            `;
+            </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString
 
