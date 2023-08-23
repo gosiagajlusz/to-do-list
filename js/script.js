@@ -32,17 +32,26 @@
     //czyli zeby document.querySelector(".js-tasks").innerHTML = TO COŚ NIEMUTOWALNE
     //updatedTasks= [...tasks, {conent:newTaskContent}]
     const removeTask = (index) => {
-        tasks.splice(index, 1);
+        const tasksWithoutRemoved = [...tasks.slice(0,index), ...tasks.slice(index+1)]
         render();
+        //wrocic do tgeo,ze w tym miejscu on render nie zna
     }
+
 //tutaj trzeba zrobić kopie całego oprocz indexu danego
-// tasksWithoutRemoved = (index)=> tasks.slice
+// const tasksWithoutRemoved = (index)=> {tasks.slice(index, 1);
+//render};
 
 
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
         render();
     }
+//const tasksToggledDone = [...tasks.slice(0,index),{[index],done:true } ...tasks.slice(index+1)]
+//tutaj musi byc zaleznosc, zestaną się done,jeżeli nie były i odwrotnie, a ta metodą z lekcji immutability
+//mozna tylko nadac juz konkretnie czy ma byc done czy  nie
+
+
+
 
     const bindingEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
