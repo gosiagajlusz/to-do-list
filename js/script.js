@@ -1,6 +1,6 @@
 {
     const tasks = [
-        
+
         {
             content: "zjeść cukinie",
             done: true,
@@ -9,28 +9,41 @@
 
     const newTaskInput = document.querySelector(".js-newTask")
     const cleanInputFocus = () => {
-        
+
         newTaskInput.value = "";
         newTaskInput.focus();
     }
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
-        render();
-    };
+    //nowe kombinacje
+    const newTaskContent = newTaskInput.value.trim();
+    const updatedTasks = (newTaskContent)=>{[...tasks, { content: newTaskContent }]};
+    //nowe kombinacje koniec
 
+    //mutable wersja poczatek
+    // const addNewTask = (newTaskContent) => {
+    // tasks.push({
+    //     content: newTaskContent,
+    // });
+    //mutable wersja koniec
+    //     render();
+    // };
+    //co zamias push? nową tablice 
+    //wstawic tablice, ktora bedzie kopia task + dodatkowo newTaskContent
+    //czyli zeby document.querySelector(".js-tasks").innerHTML = TO COŚ NIEMUTOWALNE
+    //updatedTasks= [...tasks, {conent:newTaskContent}]
     const removeTask = (index) => {
         tasks.splice(index, 1);
         render();
     }
+//tutaj trzeba zrobić kopie całego oprocz indexu danego
+// tasksWithoutRemoved = (index)=> tasks.slice
+
 
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
         render();
     }
-    
+
     const bindingEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
@@ -50,6 +63,7 @@
 
     const render = () => {
         let htmlString = "";
+
         for (const task of tasks) {
             htmlString +=
                 `<li 
@@ -73,7 +87,11 @@
         if (newTaskContent === "") {
             return;
         }
-        addNewTask(newTaskContent);
+        //nowe
+        updatedTasks(newTaskContent);
+        //koniec nowego
+        //to trzeba jakos zastąpić, stare//koniec starego
+//
         cleanInputFocus(newTaskInput);
     };
 
