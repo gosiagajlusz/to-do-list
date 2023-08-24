@@ -14,7 +14,7 @@
         newTaskInput.value = "";
         newTaskInput.focus();
     }
-    
+
     //mutable wersja poczatek
     // const  addNewTask= (newTaskContent) => {
     // tasks.push({
@@ -28,9 +28,10 @@
         return updatedTasks;
     };
     const removeTask = (index) => {
-         const tasksWithoutRemoved = [...tasks.slice(0, index), ...tasks.slice(index + 1)]
-         return tasksWithoutRemoved;
-         render();
+        const tasksWithoutRemoved = [...tasks.slice(0, index),
+        ...tasks.slice(index + 1)]
+        return tasksWithoutRemoved;
+        render();
     }
 
     const toggleTaskDone = (index) => {
@@ -61,7 +62,7 @@
         });
     }
 
-const updatedTasks = [...tasks, { content: newTaskContent }]
+    const updatedTasks = [...tasks, { content: newTaskContent }]
 
     const renderTasks = () => {
         //po wpisaniu zadania i kliknieciu ma sie zrobić 
@@ -85,7 +86,7 @@ const updatedTasks = [...tasks, { content: newTaskContent }]
                 </li>`;
         }
         document.querySelector(".js-tasks").innerHTML = tasksListhtmlString
-        
+
     };
 
     const renderButtons = () => { };
