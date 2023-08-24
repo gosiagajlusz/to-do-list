@@ -15,18 +15,13 @@
         newTaskInput.focus();
     }
 
-    //mutable wersja poczatek
-    // const  addNewTask= (newTaskContent) => {
-    // tasks.push({
-    //     content: newTaskContent,
-    // });
-    //mutable wersja koniec
-    //     render();
-    // };
     const addNewTask = (newTaskContent) => {
-        const updatedTasks = [...tasks, { content: newTaskContent }];
-        return updatedTasks;
+        tasks = [...tasks, { content: newTaskContent }];
+
+        render();
     };
+
+
     const removeTask = (index) => {
         const tasksWithoutRemoved = [...tasks.slice(0, index),
         ...tasks.slice(index + 1)]
@@ -62,7 +57,6 @@
         });
     }
 
-    const updatedTasks = [...tasks, { content: newTaskContent }]
 
     const renderTasks = () => {
         //po wpisaniu zadania i kliknieciu ma sie zrobić 
@@ -72,8 +66,7 @@
         let tasksListhtmlString = "";
 
 
-        for (const task of updatedTasks) {
-            //jak to  zmienić,żeby prawidłowo pobierało z updatedTasks
+        for (const task of tasks) {
             tasksListhtmlString +=
                 `<li 
                 class="list__item ${task.done ? "list__item--done" : ""}"
@@ -115,11 +108,8 @@
         if (newTaskContent === "") {
             return;
         }
-        //nowe
-        addNewTask(newTaskContent);
-        //ma robic to, zeby zamiast z tasks pobieralo z updatedTasks,
-        //teraz jeszcze tego nie robi
 
+        addNewTask(newTaskContent);
         cleanInputFocus(newTaskInput);
     };
 
