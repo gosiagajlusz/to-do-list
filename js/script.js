@@ -1,5 +1,5 @@
 {
-    const tasks = [
+    let tasks = [
 
         {
             content: "zjeść cukinie",
@@ -17,15 +17,13 @@
 
     const addNewTask = (newTaskContent) => {
         tasks = [...tasks, { content: newTaskContent }];
-
         render();
     };
 
 
     const removeTask = (index) => {
-        const tasksWithoutRemoved = [...tasks.slice(0, index),
+        tasks = [...tasks.slice(0, index),
         ...tasks.slice(index + 1)]
-        return tasksWithoutRemoved;
         render();
     }
 
@@ -61,11 +59,8 @@
     const renderTasks = () => {
         //po wpisaniu zadania i kliknieciu ma sie zrobić 
         //eventlistener(click)/ submit
-        addNewTask(newTaskContent);
-
+        // addNewTask(newTaskContent);
         let tasksListhtmlString = "";
-
-
         for (const task of tasks) {
             tasksListhtmlString +=
                 `<li 
@@ -82,22 +77,23 @@
 
     };
 
-    const renderButtons = () => { };
+    // const renderButtons = () => { };
     //event listenery 
 
-    const bindButtonsEvents = () => {
-        //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
-        //wiec musi byc if, sprawdzenie,czy jest
-    }
+    // const bindButtonsEvents = () => {
+    //     //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
+    //     //wiec musi byc if, sprawdzenie,czy jest
+    // }
 
 
     const render = () => {
         renderTasks();
-        renderButtons();
+        // renderButtons();
 
         bindRemoveEvents();
         bindToggleDoneEvents();
-        bindButtonsEvents();
+        // bindButtonsEvents();
+        //do zrobienia
     };
 
 
