@@ -8,52 +8,40 @@
     ];
 
     const newTaskInput = document.querySelector(".js-newTask")
+    const newTaskContent = newTaskInput.value.trim();
     const cleanInputFocus = () => {
 
         newTaskInput.value = "";
         newTaskInput.focus();
     }
-
-    //nowe kombinacje
-    const newTaskContent = newTaskInput.value.trim();
-    const updatedTasks = (newTaskContent) => { [...tasks, { content: newTaskContent }] };
-    //nowe kombinacje koniec
-
+    
     //mutable wersja poczatek
-    // const addNewTask = (newTaskContent) => {
+    // const  addNewTask= (newTaskContent) => {
     // tasks.push({
     //     content: newTaskContent,
     // });
     //mutable wersja koniec
     //     render();
     // };
-    //co zamias push? nową tablice 
-    //wstawic tablice, ktora bedzie kopia task + dodatkowo newTaskContent
-    //czyli zeby document.querySelector(".js-tasks").innerHTML = TO COŚ NIEMUTOWALNE
-    //updatedTasks= [...tasks, {conent:newTaskContent}]
+    const addNewTask = (newTaskContent) => {
+        const updatedTasks = [...tasks, { content: newTaskContent }];
+        return updatedTasks;
+    };
     const removeTask = (index) => {
-        const tasksWithoutRemoved = [...tasks.slice(0, index), ...tasks.slice(index + 1)]
-        render();
-        //wrocic do tgeo,ze w tym miejscu on render nie zna
+         const tasksWithoutRemoved = [...tasks.slice(0, index), ...tasks.slice(index + 1)]
+         return tasksWithoutRemoved;
+         render();
     }
-
-    //tutaj trzeba zrobić kopie całego oprocz indexu danego
-    // const tasksWithoutRemoved = (index)=> {tasks.slice(index, 1);
-    //render};
-
 
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
         render();
     }
     //const tasksToggledDone = [...tasks.slice(0,index),{[index],done:true } ...tasks.slice(index+1)]
-    //tutaj musi byc zaleznosc, zestaną się done,jeżeli nie były i odwrotnie, a ta metodą z lekcji immutability
+    //tutaj musi byc zaleznosc, ze staną się done,jeżeli nie były i odwrotnie, a ta metodą z lekcji immutability
     //mozna tylko nadac juz konkretnie czy ma byc done czy  nie
 
-
-
-
-    const bindingEvents = () => {
+    const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
@@ -61,6 +49,9 @@
 
             });
         });
+    }
+
+    const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButtons, index) => {
             toggleDoneButtons.addEventListener("click", () => {
@@ -70,41 +61,45 @@
         });
     }
 
+const updatedTasks = [...tasks, { content: newTaskContent }]
+
     const renderTasks = () => {
-        let htmlString = "";
+        //po wpisaniu zadania i kliknieciu ma sie zrobić 
+        //eventlistener(click)/ submit
+        addNewTask(newTaskContent);
 
-        for (const task of tasks) {
-            htmlString +=
+        let tasksListhtmlString = "";
+
+
+        for (const task of updatedTasks) {
+            //jak to  zmienić,żeby prawidłowo pobierało z updatedTasks
+            tasksListhtmlString +=
                 `<li 
-        class="list__item ${task.done ? "list__item--done" : ""}"
-        >
-        <span class="list__taskContent">${task.content} </span>       
-    <button class="js-done buttons__done">
-    ${task.done ? "✔" : "   "}           
-    </button>         
-    <button class="js-remove buttons__remove">🗑</button>
-    </li>`;
+                class="list__item ${task.done ? "list__item--done" : ""}"
+                 >
+                <span class="list__taskContent">${task.content} </span>       
+                <button class="js-done buttons__done">
+                ${task.done ? "✔" : "   "}           
+                </button>         
+                <button class="js-remove buttons__remove">🗑</button>
+                </li>`;
         }
-        document.querySelector(".js-tasks").innerHTML = htmlString
-
-    
+        document.querySelector(".js-tasks").innerHTML = tasksListhtmlString
+        
     };
 
     const renderButtons = () => { };
-//event listenery 
+    //event listenery 
 
-const bindButtonsEvents = ()=> {
-    //if 
-    //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
-    //wiec musi byc if, sprawdzenie,czy jest
-}
+    const bindButtonsEvents = () => {
+        //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
+        //wiec musi byc if, sprawdzenie,czy jest
+    }
 
 
     const render = () => {
         renderTasks();
         renderButtons();
-        bindingEvents();
-
 
         bindRemoveEvents();
         bindToggleDoneEvents();
@@ -120,10 +115,10 @@ const bindButtonsEvents = ()=> {
             return;
         }
         //nowe
-        updatedTasks(newTaskContent);
-        //koniec nowego
-        //to trzeba jakos zastąpić, stare//koniec starego
-        //
+        addNewTask(newTaskContent);
+        //ma robic to, zeby zamiast z tasks pobieralo z updatedTasks,
+        //teraz jeszcze tego nie robi
+
         cleanInputFocus(newTaskInput);
     };
 
