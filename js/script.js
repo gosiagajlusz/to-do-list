@@ -20,6 +20,9 @@
         render();
     };
 
+let hideDoneTasks = false;
+
+
 
     const removeTask = (index) => {
         tasks = [...tasks.slice(0, index),
@@ -27,12 +30,18 @@
         render();
     }
 
-    const toggleTaskDone = (index) => {
-        tasks[index].done = !tasks[index].done;
+    const toggleTaskDone = (index) => 
+    //uruchamia sie po kliknieciu na przycisk done
+    {        
+        const toogle = (index)=>{
+            tasks[index].done = !tasks[index].done;}
+        tasks = tasks.map(toogle)
         render();
     }
-    //const tasksToggledDone = [...tasks.slice(0,index),{[index],done:true } ...tasks.slice(index+1)]
-    //tutaj musi byc zaleznosc, ze staną się done,jeżeli nie były i odwrotnie, a ta metodą z lekcji immutability
+    //const tasksToggledDone = [...tasks.slice(0,index),{[index],done:true } 
+    //...tasks.slice(index+1)]
+    //tutaj musi byc zaleznosc, ze staną się done,jeżeli nie były i
+    // odwrotnie, a ta metodą z lekcji immutability
     //mozna tylko nadac juz konkretnie czy ma byc done czy  nie
 
     const bindRemoveEvents = () => {
@@ -57,9 +66,6 @@
 
 
     const renderTasks = () => {
-        //po wpisaniu zadania i kliknieciu ma sie zrobić 
-        //eventlistener(click)/ submit
-        // addNewTask(newTaskContent);
         let tasksListhtmlString = "";
         for (const task of tasks) {
             tasksListhtmlString +=
@@ -77,18 +83,21 @@
 
     };
 
-    // const renderButtons = () => { };
-    //event listenery 
+     const renderButtons = () => { };
+    //bedzie renderowała dwa przyciski 
 
-    // const bindButtonsEvents = () => {
-    //     //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
-    //     //wiec musi byc if, sprawdzenie,czy jest
-    // }
+     const bindButtonsEvents = () => {
+    //     event listenery dodane do przyciskow np
+    //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
+    //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
+    //a jesli nie to nie
+     }
 
 
     const render = () => {
         renderTasks();
         // renderButtons();
+        //do zrobienia
 
         bindRemoveEvents();
         bindToggleDoneEvents();
@@ -116,5 +125,4 @@
     };
     init();
 };
-
 
