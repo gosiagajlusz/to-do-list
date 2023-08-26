@@ -20,7 +20,7 @@
         render();
     };
 
-let hideDoneTasks = false;
+    let hideDoneTasks = false;
 
 
 
@@ -30,19 +30,20 @@ let hideDoneTasks = false;
         render();
     }
 
-    const toggleTaskDone = (index) => 
-    //uruchamia sie po kliknieciu na przycisk done
-    {        
-        const toogle = (index)=>{
-            tasks[index].done = !tasks[index].done;}
-        tasks = tasks.map(toogle)
+    const toggleTaskDone = (index) =>
+    
+    {
+
+        tasks = [...tasks.slice(0, index),
+        {
+            ...tasks[index],
+            done: !tasks[index].done
+        },
+        ...tasks.slice(index + 1)
+        ];
         render();
     }
-    //const tasksToggledDone = [...tasks.slice(0,index),{[index],done:true } 
-    //...tasks.slice(index+1)]
-    //tutaj musi byc zaleznosc, ze staną się done,jeżeli nie były i
-    // odwrotnie, a ta metodą z lekcji immutability
-    //mozna tylko nadac juz konkretnie czy ma byc done czy  nie
+    
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -83,15 +84,15 @@ let hideDoneTasks = false;
 
     };
 
-     const renderButtons = () => { };
+    const renderButtons = () => { };
     //bedzie renderowała dwa przyciski 
 
-     const bindButtonsEvents = () => {
-    //     event listenery dodane do przyciskow np
-    //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
-    //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
-    //a jesli nie to nie
-     }
+    const bindButtonsEvents = () => {
+        //     event listenery dodane do przyciskow np
+        //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
+        //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
+        //a jesli nie to nie
+    }
 
 
     const render = () => {
