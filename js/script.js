@@ -23,7 +23,6 @@
     let hideDoneTasks = false;
 
 
-
     const removeTask = (index) => {
         tasks = [...tasks.slice(0, index),
         ...tasks.slice(index + 1)]
@@ -84,21 +83,37 @@
 
     };
 
-    const renderButtons = () => { };
+    const hideDoneButton = document.querySelector(".js-hideDoneButton");
+const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
+
+    const renderButtons = () => {
+       const  hideDoneButtonHTMLString = `Ukryj ukończone`;
+        // if lista nie jest pusta/są jakieś ukomczone zadania 
+        // hideDoneButtonHTMLString = `Ukryj ukończone`
+        hideDoneButton.innerHTML = hideDoneButtonHTMLString
+
+ const markAllDoneButtonHTMLString = `Oznacz wszystkie jako ukończone`;
+ markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
+     };
     //bedzie renderowała dwa przyciski 
+    //powinna skleic htmla na podstawie danej hidedonetasks
+    //wstawic go w miejsce wyznaczone dla niego w pliku html
 
     const bindButtonsEvents = () => {
         //     event listenery dodane do przyciskow np
         //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
         //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
         //a jesli nie to nie
+
+
+        //let hideDoneTasks = false;
+
     }
 
 
     const render = () => {
         renderTasks();
-        // renderButtons();
-        //do zrobienia
+        renderButtons();
 
         bindRemoveEvents();
         bindToggleDoneEvents();

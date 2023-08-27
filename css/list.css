@@ -1,4 +1,8 @@
 
+.list__hidden {
+    visibility: hidden;
+}
+
 
 .list__item {
     display: grid;
