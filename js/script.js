@@ -71,23 +71,22 @@
         render();
     }
 
-const hideOrShowDoneTasks = (hideDoneTasks)=> {
-    hideDoneTasks ? false : true        
+    const hideOrShowDoneTasks = (hideDoneTasks) => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+        // hideDoneTasks ? false : true;
+
     }
-     
-    //tu ma być składnia co zmienia na przeciwienstwo
-
-
-
-
 
     const renderTasks = () => {
         let tasksListhtmlString = "";
         for (const task of tasks) {
             tasksListhtmlString +=
                 `<li 
-                class="list__item ${task.done ? "list__item--done" : ""}"
-                 >
+                class="list__item js__listClass ${task.done && hideDoneTasks ? "list__hidden" : ""
+                }">
+                 
+
                 <span class="list__taskContent">${task.content} </span>       
                 <button class="js-done buttons__done">
                 ${task.done ? "✔" : "   "}           
@@ -113,37 +112,30 @@ const hideOrShowDoneTasks = (hideDoneTasks)=> {
     };
 
     const bindButtonsEvents = () => {
-
         hideDoneButton.addEventListener("click", () => {
-            hideOrShowDoneTasks(hideDoneTasks);
-
+            hideOrShowDoneTasks();
         })
 
+        markAllDoneButton.addEventListener("click", () => {
+            markAllDone();
 
-
+        }
+        )
 
         //     event listenery dodane do przyciskow np
         //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
         //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
-        //a jesli nie to nie
-
-
-        //let hideDoneTasks = false;
-
+        //a jesli nie to nie     //let hideDoneTasks = false;
     }
 
 
     const render = () => {
         renderTasks();
         renderButtons();
-
         bindRemoveEvents();
         bindToggleDoneEvents();
-         bindButtonsEvents();
-        
+        bindButtonsEvents();
     };
-
-
 
     onFormSubmit = (event) => {
         event.preventDefault();
@@ -151,7 +143,6 @@ const hideOrShowDoneTasks = (hideDoneTasks)=> {
         if (newTaskContent === "") {
             return;
         }
-
         addNewTask(newTaskContent);
         cleanInputFocus(newTaskInput);
     };

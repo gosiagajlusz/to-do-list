@@ -1,0 +1,9 @@
+.hideDoneButton, .markAllDoneButton{
+    border:none;
+    padding:5px 1px;
+    display:flex;
+max-height: 30px;
+
+
+}
+
