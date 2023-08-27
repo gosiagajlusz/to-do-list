@@ -29,9 +29,7 @@
         render();
     }
 
-    const toggleTaskDone = (index) =>
-    
-    {
+    const toggleTaskDone = (index) => {
 
         tasks = [...tasks.slice(0, index),
         {
@@ -42,7 +40,7 @@
         ];
         render();
     }
-    
+
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -64,6 +62,24 @@
         });
     }
 
+    const markAllDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }))
+
+        render();
+    }
+
+const hideOrShowDoneTasks = (hideDoneTasks)=> {
+    hideDoneTasks ? false : true        
+    }
+     
+    //tu ma być składnia co zmienia na przeciwienstwo
+
+
+
+
 
     const renderTasks = () => {
         let tasksListhtmlString = "";
@@ -84,22 +100,28 @@
     };
 
     const hideDoneButton = document.querySelector(".js-hideDoneButton");
-const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
+    const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
     const renderButtons = () => {
-       const  hideDoneButtonHTMLString = `Ukryj ukończone`;
+        const hideDoneButtonHTMLString = `Ukryj ukończone`;
         // if lista nie jest pusta/są jakieś ukomczone zadania 
         // hideDoneButtonHTMLString = `Ukryj ukończone`
         hideDoneButton.innerHTML = hideDoneButtonHTMLString
 
- const markAllDoneButtonHTMLString = `Oznacz wszystkie jako ukończone`;
- markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
-     };
-    //bedzie renderowała dwa przyciski 
-    //powinna skleic htmla na podstawie danej hidedonetasks
-    //wstawic go w miejsce wyznaczone dla niego w pliku html
+        const markAllDoneButtonHTMLString = `Ukończ wszystkie`;
+        markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
+    };
 
     const bindButtonsEvents = () => {
+
+        hideDoneButton.addEventListener("click", () => {
+            hideOrShowDoneTasks(hideDoneTasks);
+
+        })
+
+
+
+
         //     event listenery dodane do przyciskow np
         //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
         //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
@@ -117,8 +139,8 @@ const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
         bindRemoveEvents();
         bindToggleDoneEvents();
-        // bindButtonsEvents();
-        //do zrobienia
+         bindButtonsEvents();
+        
     };
 
 
