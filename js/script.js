@@ -40,8 +40,8 @@
         ];
         render();
     }
-//zrobiłam to w ten sposób, bo nie wiedziałam jak zrobić przy pomocy map
-//obczaiłam czyjeś rozwiązanie map i nadal nie wiem- wrócić do tego
+    //zrobiłam to w ten sposób, bo nie wiedziałam jak zrobić przy pomocy map
+    //obczaiłam czyjeś rozwiązanie map i nadal nie wiem- wrócić do tego
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -76,16 +76,15 @@
         hideDoneTasks = !hideDoneTasks;
         render();
     };
-    //     // czy mogłoby być hideDoneTasks ? false : true;
+    // sprawdzić czy mogłoby być hideDoneTasks ? false : true;
 
-    
 
     const renderTasks = () => {
-        
-        const taskToHTML = task => 
-                `<li 
+
+        const taskToHTML = task =>
+            `<li 
                 class="list__item js__listClass ${task.done && hideDoneTasks ? "list__hidden" : ""
-                }">
+            }">
                  
 
                 <span class="list__taskContent">${task.content} </span>       
@@ -94,16 +93,15 @@
                 </button>         
                 <button class="js-remove buttons__remove">🗑</button>
                 </li>`;
-                const tasksElement = document.querySelector(".js-tasks")
-        
+        const tasksElement = document.querySelector(".js-tasks")
+
         tasksElement.innerHTML = tasks.map(taskToHTML).join("");
-        };
-        
+    };
 
-    
 
-    const hideDoneButton = document.querySelector(".js-hideDoneButton");
-    const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
+
+    // const hideDoneButton = document.querySelector(".js-hideDoneButton");
+    // const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
     const renderButtons = () => {
         // if (tasks.some(({done})=>done){
@@ -111,42 +109,33 @@
         // } zła składnia była, bez if jak są metody tablicy
         const buttonsElement = document.querySelector(".js-buttons");
 
-        if (!tasks.length){
-            buttonsElement.innerHTML= "";
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
             return;
         }
-        buttonsElement.innerHTML= `
+        buttonsElement.innerHTML = `
         <button class= "buttons__buttons js-toogleHideDoneButton">
         ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone 
         </button>
 <button class="buttons__buttons js-markAllDoneButton"
-${tasks.every(({done})=>done) ? "disabled": ""}> Ukończ wszystkie
+${tasks.every(({ done }) => done) ? "disabled" : ""}> Ukończ wszystkie
 </button>
-        `;
-
-        //  hideDoneButtonHTMLString = `Ukryj ukończone`
-        //  hideDoneButton.innerHTML = hideDoneButtonHTMLString
-
-        // const markAllDoneButtonHTMLString = `Ukończ wszystkie`;
-        // markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
+        `;      
     };
 
     const bindButtonsEvents = () => {
-const hideDoneButton = document.querySelector(".js-toogleHideDoneButton");
-
-        hideDoneButton.addEventListener("click", () => {
-            hideOrShowDoneTasks();
-        });
-
         const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
-        markAllDoneButton.addEventListener("click", () => {
-            markAllDone();
+        if(markAllDoneButton){
+        markAllDoneButton.addEventListener("click", markAllDone);
+            }
+        
+        const toogleHideDoneButton = document.querySelector(".js-toogleHideDoneButton");
 
-        }
-        )
-
-        //     event listenery dodane do przyciskow np
+        if (toogleHideDoneButton){
+            toogleHideDoneButton.addEventListener("click", hideOrShowDoneTasks)
+            };
+            //     event listenery dodane do przyciskow np
         //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
         //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
         //a jesli nie to nie     //let hideDoneTasks = false;
@@ -154,10 +143,11 @@ const hideDoneButton = document.querySelector(".js-toogleHideDoneButton");
 
 
     const render = () => {
-        renderTasks();
-        renderButtons();
+        renderTasks();        
         bindRemoveEvents();
         bindToggleDoneEvents();
+
+        renderButtons();
         bindButtonsEvents();
     };
 
