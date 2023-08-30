@@ -72,7 +72,7 @@
     }
     let hideDoneTasks = false;
 
-    const hideOrShowDoneTasks = (hideDoneTasks) => {
+    const hideOrShowDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
     };

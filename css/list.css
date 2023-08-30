@@ -1,7 +1,4 @@
 
-.list__hidden {
-    display:none;
-}
 
 
 .list__item {
@@ -24,4 +21,8 @@
     font-weight: 400;
     text-decoration: line-through;
     /* display: grid; */
+}
+
+.list__hidden {
+    display:none;
 }
