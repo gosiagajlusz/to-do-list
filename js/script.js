@@ -20,7 +20,6 @@
         render();
     };
 
-    let hideDoneTasks = false;
 
 
     const removeTask = (index) => {
@@ -71,12 +70,13 @@
 
         render();
     }
+    let hideDoneTasks = false;
 
     const hideOrShowDoneTasks = (hideDoneTasks) => {
         hideDoneTasks = !hideDoneTasks;
         render();
     };
-    // sprawdzić czy mogłoby być hideDoneTasks ? false : true;
+    // pozniej sprawdzić czy mogłoby być hideDoneTasks ? false : true;
 
 
     const renderTasks = () => {
@@ -98,8 +98,6 @@
         tasksElement.innerHTML = tasks.map(taskToHTML).join("");
     };
 
-
-
     // const hideDoneButton = document.querySelector(".js-hideDoneButton");
     // const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
@@ -108,42 +106,39 @@
         //     const hideDoneButtonHTMLString = `Ukryj ukończone`;
         // } zła składnia była, bez if jak są metody tablicy
         const buttonsElement = document.querySelector(".js-buttons");
-
         if (!tasks.length) {
             buttonsElement.innerHTML = "";
             return;
         }
         buttonsElement.innerHTML = `
-        <button class= "buttons__buttons js-toogleHideDoneButton">
+        <button class= "buttons__button js-toogleHideDoneButton">
         ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone 
         </button>
-<button class="buttons__buttons js-markAllDoneButton"
+<button class="buttons__button js-markAllDoneButton"
 ${tasks.every(({ done }) => done) ? "disabled" : ""}> Ukończ wszystkie
 </button>
-        `;      
+        `;
     };
 
     const bindButtonsEvents = () => {
         const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
-        if(markAllDoneButton){
-        markAllDoneButton.addEventListener("click", markAllDone);
-            }
-        
+        if (markAllDoneButton) {
+            markAllDoneButton.addEventListener("click", markAllDone);
+        }
+
         const toogleHideDoneButton = document.querySelector(".js-toogleHideDoneButton");
 
-        if (toogleHideDoneButton){
+        if (toogleHideDoneButton) {
             toogleHideDoneButton.addEventListener("click", hideOrShowDoneTasks)
-            };
-            //     event listenery dodane do przyciskow np
-        //złapanie buttona ale button zakoncz wszystkie nie zawsze jest
+        };
         //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
         //a jesli nie to nie     //let hideDoneTasks = false;
     }
 
 
     const render = () => {
-        renderTasks();        
+        renderTasks();
         bindRemoveEvents();
         bindToggleDoneEvents();
 
