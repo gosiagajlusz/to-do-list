@@ -106,22 +106,39 @@
     const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
     const renderButtons = () => {
-        // if (tasks.some(({done}))=done){
+        // if (tasks.some(({done})=>done){
         //     const hideDoneButtonHTMLString = `Ukryj ukończone`;
-        // }
-        
-        
-         hideDoneButtonHTMLString = `Ukryj ukończone`
-         hideDoneButton.innerHTML = hideDoneButtonHTMLString
+        // } zła składnia była, bez if jak są metody tablicy
+        const buttonsElement = document.querySelector(".js-buttons");
 
-        const markAllDoneButtonHTMLString = `Ukończ wszystkie`;
-        markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
+        if (!tasks.length){
+            buttonsElement.innerHTML= "";
+            return;
+        }
+        buttonsElement.innerHTML= `
+        <button class= "buttons__buttons js-toogleHideDoneButton">
+        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone 
+        </button>
+<button class="buttons__buttons js-markAllDoneButton"
+${tasks.every(({done})=>done) ? "disabled": ""}> Ukończ wszystkie
+</button>
+        `;
+
+        //  hideDoneButtonHTMLString = `Ukryj ukończone`
+        //  hideDoneButton.innerHTML = hideDoneButtonHTMLString
+
+        // const markAllDoneButtonHTMLString = `Ukończ wszystkie`;
+        // markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
     };
 
     const bindButtonsEvents = () => {
+const hideDoneButton = document.querySelector(".js-toogleHideDoneButton");
+
         hideDoneButton.addEventListener("click", () => {
             hideOrShowDoneTasks();
-        })
+        });
+
+        const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
         markAllDoneButton.addEventListener("click", () => {
             markAllDone();
