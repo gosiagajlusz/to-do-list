@@ -35,7 +35,8 @@
     padding-left: 15px;
     box-shadow: 5px rgb(185, 183, 183);
     flex-direction:row-reverse;
-
+justify-content:space-between;
+align-items:center;
 }
 
 /* obszar w ktorym sie tworzy lista wraz z batonami */
@@ -100,7 +101,6 @@
 .form__paragraph {
     font-weight: bold;
     font-size: 25px;
-    scroll-padding-top:10px;
     
 }
 

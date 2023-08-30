@@ -40,12 +40,12 @@
     padding:5px 1px;
     display:flex;
 max-height: 30px;
-transition: background 0.5s 0.5s linear;
-background-color: hsl(0, 3%, 75%);
-margin-bottom: 15px;
+transition: color 0.5s 0.5s linear;
+background-color: #efebeb;
+color:teal;
 }
 
 .buttons__button:hover{
-    background-color: hsl(0, 3%, 89%);
+    color: rgb(116, 186, 186);
 
 }
