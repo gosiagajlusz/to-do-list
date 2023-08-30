@@ -40,7 +40,8 @@
         ];
         render();
     }
-
+//zrobiłam to w ten sposób, bo nie wiedziałam jak zrobić przy pomocy map
+//obczaiłam czyjeś rozwiązanie map i nadal nie wiem- wrócić do tego
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -60,7 +61,7 @@
 
             });
         });
-    }
+    };
 
     const markAllDone = () => {
         tasks = tasks.map((task) => ({
@@ -74,14 +75,14 @@
     const hideOrShowDoneTasks = (hideDoneTasks) => {
         hideDoneTasks = !hideDoneTasks;
         render();
-        // hideDoneTasks ? false : true;
+    };
+    //     // czy mogłoby być hideDoneTasks ? false : true;
 
-    }
+    
 
     const renderTasks = () => {
-        let tasksListhtmlString = "";
-        for (const task of tasks) {
-            tasksListhtmlString +=
+        
+        const taskToHTML = task => 
                 `<li 
                 class="list__item js__listClass ${task.done && hideDoneTasks ? "list__hidden" : ""
                 }">
@@ -93,19 +94,25 @@
                 </button>         
                 <button class="js-remove buttons__remove">🗑</button>
                 </li>`;
-        }
-        document.querySelector(".js-tasks").innerHTML = tasksListhtmlString
+                const tasksElement = document.querySelector(".js-tasks")
+        
+        tasksElement.innerHTML = tasks.map(taskToHTML).join("");
+        };
+        
 
-    };
+    
 
     const hideDoneButton = document.querySelector(".js-hideDoneButton");
     const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
     const renderButtons = () => {
-        const hideDoneButtonHTMLString = `Ukryj ukończone`;
-        // if lista nie jest pusta/są jakieś ukomczone zadania 
-        // hideDoneButtonHTMLString = `Ukryj ukończone`
-        hideDoneButton.innerHTML = hideDoneButtonHTMLString
+        // if (tasks.some(({done}))=done){
+        //     const hideDoneButtonHTMLString = `Ukryj ukończone`;
+        // }
+        
+        
+         hideDoneButtonHTMLString = `Ukryj ukończone`
+         hideDoneButton.innerHTML = hideDoneButtonHTMLString
 
         const markAllDoneButtonHTMLString = `Ukończ wszystkie`;
         markAllDoneButton.innerHTML = markAllDoneButtonHTMLString;
