@@ -31,10 +31,10 @@
     background-color: hsl(0, 0%, 100%);
     border: none;
     display: flex;
-
     margin: 5px 1px 1px 1px;
     padding-left: 15px;
     box-shadow: 5px rgb(185, 183, 183);
+    flex-direction:row-reverse;
 
 }
 
@@ -100,6 +100,7 @@
 .form__paragraph {
     font-weight: bold;
     font-size: 25px;
+    scroll-padding-top:10px;
     
 }
 

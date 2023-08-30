@@ -33,3 +33,19 @@
 .buttons__remove:hover {
     background-color: rgb(237, 125, 125);
 }
+
+
+.buttons__button{
+    border:none;
+    padding:5px 1px;
+    display:flex;
+max-height: 30px;
+transition: background 0.5s 0.5s linear;
+background-color: hsl(0, 3%, 75%);
+margin-bottom: 15px;
+}
+
+.buttons__button:hover{
+    background-color: hsl(0, 3%, 89%);
+
+}
