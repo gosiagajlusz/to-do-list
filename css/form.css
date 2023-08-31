@@ -39,7 +39,6 @@ justify-content:space-between;
 align-items:center;
 }
 
-/* obszar w ktorym sie tworzy lista wraz z batonami */
 .form__fieldsetList {
     background-color: hsl(0, 0%, 100%);
     border: none;
@@ -108,13 +107,17 @@ align-items:center;
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 897px) {
     .form__fieldsetInput {
         flex-direction: column;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items:center;
     }
 .form__fieldsetTitle{
-    display:grid;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
 
     /* flex-direction:column-reverse;
     justify-content: center;

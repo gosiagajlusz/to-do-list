@@ -76,7 +76,7 @@
         hideDoneTasks = !hideDoneTasks;
         render();
     };
-    // pozniej sprawdzić czy mogłoby być hideDoneTasks ? false : true;
+
 
 
     const renderTasks = () => {
@@ -98,13 +98,9 @@
         tasksElement.innerHTML = tasks.map(taskToHTML).join("");
     };
 
-    // const hideDoneButton = document.querySelector(".js-hideDoneButton");
-    // const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
+
 
     const renderButtons = () => {
-        // if (tasks.some(({done})=>done){
-        //     const hideDoneButtonHTMLString = `Ukryj ukończone`;
-        // } zła składnia była, bez if jak są metody tablicy
         const buttonsElement = document.querySelector(".js-buttons");
         if (!tasks.length) {
             buttonsElement.innerHTML = "";
@@ -132,8 +128,6 @@ ${tasks.every(({ done }) => done) ? "disabled" : ""}> Ukończ wszystkie
         if (toogleHideDoneButton) {
             toogleHideDoneButton.addEventListener("click", hideOrShowDoneTasks)
         };
-        //     //wiec musi byc if, button jest obecny to mu przypinamy event listener
-        //a jesli nie to nie     //let hideDoneTasks = false;
     }
 
 
