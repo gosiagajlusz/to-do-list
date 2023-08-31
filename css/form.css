@@ -1,4 +1,3 @@
-
 .form {
     background-color: #efebeb;
     max-width: 80%;
@@ -34,9 +33,9 @@
     margin: 5px 1px 1px 1px;
     padding-left: 15px;
     box-shadow: 5px rgb(185, 183, 183);
-    flex-direction:row-reverse;
-justify-content:space-between;
-align-items:center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form__fieldsetList {
@@ -50,8 +49,8 @@ align-items:center;
 .form__ul {
     list-style-type: none;
     display: grid;
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -73,7 +72,7 @@ align-items:center;
 
 
 .form__addTaskButton {
-    background-color:teal;
+    background-color: teal;
     color: white;
     padding: 11px;
     border: none;
@@ -81,8 +80,8 @@ align-items:center;
     transition: background 0.5s 0.5s linear;
 }
 
-.form__addTaskButton:hover{
-    background-color:rgb(98, 154, 154);
+.form__addTaskButton:hover {
+    background-color: rgb(98, 154, 154);
     transform: scale(1.15);
 
 }
@@ -102,8 +101,8 @@ align-items:center;
 .form__paragraph {
     font-weight: bold;
     font-size: 25px;
-    display:flex;
-    
+    display: flex;
+
 }
 
 
@@ -111,22 +110,21 @@ align-items:center;
     .form__fieldsetInput {
         flex-direction: column;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
     }
-.form__fieldsetTitle{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items:center;
 
-    /* flex-direction:column-reverse;
-    justify-content: center;
-    align-items: center; */
-};
-.form__paragraph{
-    margin:0px;
-    padding:0px;
-}
+    .form__fieldsetTitle {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    ;
+
+    .form__paragraph {
+        margin: 0px;
+        padding: 0px;
+    }
 
 
 }

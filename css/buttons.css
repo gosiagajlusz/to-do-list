@@ -41,10 +41,7 @@
 .buttons__button {
     border: none;
     padding: 5px 5px;
-
-    /* display: inline-flex; */
-   min-height: 30px;
-   /* min-width:100px; */
+   min-height: 30px;   
     transition: color 0.5s 0.5s linear;
     background-color: #ffffff;
     color: teal;
