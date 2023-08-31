@@ -34,15 +34,28 @@
     background-color: rgb(237, 125, 125);
 }
 
+.buttons {
+    padding:0px;
+}
 
 .buttons__button {
     border: none;
     padding: 5px 5px;
-    display: flex;
-    max-height: 30px;
+
+    /* display: inline-flex; */
+   min-height: 30px;
+   /* min-width:100px; */
     transition: color 0.5s 0.5s linear;
     background-color: #ffffff;
     color: teal;
+    font-size:18px;
+    
+}
+
+@media (max-width: 767px){
+/* .buttons__button{
+       
+} */
 }
 
 .buttons__button:hover {

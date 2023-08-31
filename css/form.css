@@ -103,6 +103,7 @@ align-items:center;
 .form__paragraph {
     font-weight: bold;
     font-size: 25px;
+    display:flex;
     
 }
 
@@ -112,8 +113,18 @@ align-items:center;
         flex-direction: column;
         flex-wrap: wrap;
     }
+.form__fieldsetTitle{
+    display:grid;
 
-    ;
+    /* flex-direction:column-reverse;
+    justify-content: center;
+    align-items: center; */
+};
+.form__paragraph{
+    margin:0px;
+    padding:0px;
+}
+
 
 }
 
