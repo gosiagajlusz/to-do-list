@@ -84,6 +84,8 @@ align-items:center;
 
 .form__addTaskButton:hover{
     background-color:rgb(98, 154, 154);
+    transform: scale(1.15);
+
 }
 
 
