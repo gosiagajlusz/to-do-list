@@ -6,6 +6,7 @@
             done: true,
         },
     ];
+    let hideDoneTasks = false;
 
     const newTaskInput = document.querySelector(".js-newTask")
     const newTaskContent = newTaskInput.value.trim();
@@ -16,34 +17,31 @@
     }
 
     const addNewTask = (newTaskContent) => {
-        tasks = [...tasks, { content: newTaskContent }];
+        tasks = [...tasks,
+        { content: newTaskContent }];
         render();
     };
 
 
 
     const removeTask = (index) => {
-        tasks = [...tasks.slice(0, index),
-        ...tasks.slice(index + 1)]
+        tasks = tasks.filter((task, indexTask) => indexTask !== index);
+
+        // [...tasks.slice(0, index),
+        // ...tasks.slice(index + 1)]
         render();
     }
+    //chce zeby wyplulo nowy array ze wszystkim oprocz tego kliknietego
+    //tasks = taks.filter(()=>)
 
     const toggleTaskDone = (index) => {
 
-//tasks = tasks.map(({index].done)
-
-
-        tasks = [...tasks.slice(0, index),
-        {
-            ...tasks[index],
-            done: !tasks[index].done
-        },
-        ...tasks.slice(index + 1)
-        ];
+        tasks = tasks.map(
+            (task, indexTask) =>
+                index === indexTask ? { ...task, done: !task.done } : task);
         render();
     }
-    //zrobiłam to w ten sposób, bo nie wiedziałam jak zrobić przy pomocy map
-    //obczaiłam czyjeś rozwiązanie map i nadal nie wiem- wrócić do tego
+
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -73,7 +71,6 @@
 
         render();
     }
-    let hideDoneTasks = false;
 
     const hideOrShowDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;

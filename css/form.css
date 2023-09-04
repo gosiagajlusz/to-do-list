@@ -24,6 +24,7 @@
 
 .form__input {
     flex-grow: 3;
+    flex-basis:100%;
 }
 
 .form__fieldsetTitle {
@@ -77,7 +78,8 @@
     padding: 11px;
     border: none;
     margin: 7px;
-    transition: background 0.5s 0.5s linear;
+    transition: 1s;
+    flex-basis:100%;
 }
 
 .form__addTaskButton:hover {
@@ -102,6 +104,7 @@
     font-weight: bold;
     font-size: 25px;
     display: flex;
+    align-self:flex-start;
 
 }
 
@@ -110,21 +113,22 @@
     .form__fieldsetInput {
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        
     }
 
     .form__fieldsetTitle {
         display: flex;
         flex-direction: column;
-        
+        justify-content: space-between;
+        align-items:center;
     }
 
     ;
 
-    .form__paragraph {
+    /* .form__paragraph {
         margin: 0px;
         padding: 0px;
-    }
+    } */
 
 
 }
