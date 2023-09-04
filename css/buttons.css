@@ -36,6 +36,9 @@
 
 .buttons {
     padding:0px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .buttons__button {
