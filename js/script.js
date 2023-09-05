@@ -26,13 +26,13 @@
 
     const removeTask = (index) => {
         tasks = tasks.filter((task, indexTask) => indexTask !== index);
-
-        // [...tasks.slice(0, index),
-        // ...tasks.slice(index + 1)]
         render();
     }
     //chce zeby wyplulo nowy array ze wszystkim oprocz tego kliknietego
     //tasks = taks.filter(()=>)
+
+
+    
 
     const toggleTaskDone = (index) => {
 
@@ -41,6 +41,18 @@
                 index === indexTask ? { ...task, done: !task.done } : task);
         render();
     }
+//dłuższa wersja
+// tasks = tasks.map((task, index) => {
+//     if (index === taskIndex) {
+//       return {
+//         ...task,
+//         done: !task.done,
+//       };
+//     }
+//     return task;
+//   });
+
+
 
 
     const bindRemoveEvents = () => {
