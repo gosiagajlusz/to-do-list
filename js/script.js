@@ -28,12 +28,7 @@
         tasks = tasks.filter((task, indexTask) => indexTask !== index);
         render();
     }
-    //chce zeby wyplulo nowy array ze wszystkim oprocz tego kliknietego
-    //tasks = taks.filter(()=>)
-
-
     
-
     const toggleTaskDone = (index) => {
 
         tasks = tasks.map(
@@ -51,9 +46,6 @@
 //     }
 //     return task;
 //   });
-
-
-
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -123,24 +115,29 @@
         ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone 
         </button>
 <button class="buttons__button js-markAllDoneButton"
-${tasks.every(({ done }) => done) ? "disabled" : ""}> Ukończ wszystkie
+${tasks.every(({ done }) => done) ? "disabled" : ""}>
+Ukończ wszystkie
 </button>
         `;
     };
 
     const bindButtonsEvents = () => {
+        const toogleHideDoneButton = document.querySelector(
+            ".js-toogleHideDoneButton");
+
+        if (toogleHideDoneButton) {
+            toogleHideDoneButton.addEventListener("click", hideOrShowDoneTasks)
+        }
+
+
         const markAllDoneButton = document.querySelector(".js-markAllDoneButton");
 
         if (markAllDoneButton) {
             markAllDoneButton.addEventListener("click", markAllDone);
         }
 
-        const toogleHideDoneButton = document.querySelector(".js-toogleHideDoneButton");
-
-        if (toogleHideDoneButton) {
-            toogleHideDoneButton.addEventListener("click", hideOrShowDoneTasks)
-        };
-    }
+        
+    };
 
 
     const render = () => {
