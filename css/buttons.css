@@ -53,6 +53,10 @@
     
 }
 
+.buttons__button:disabled{
+    color:grey;
+}
+
 @media (max-width: 767px){
 /* .buttons__button{
        
