@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
 }
 
-*::after,
+*,::after,
 ::before {
     box-sizing: inherit;
 }
@@ -10,4 +10,5 @@ html {
 .body{
     background-color: #efebeb;
     word-break: break-word;
+    font-family: 'Montserrat',sans-serif;
     }
