@@ -91,10 +91,11 @@
             }">
                  
 
-                <span class="list__taskContent">${task.content} </span>       
+                       
                 <button class="js-done buttons__done">
                 ${task.done ? "✔" : "   "}           
-                </button>         
+                </button> 
+                <span class="list__taskContent">${task.content} </span>        
                 <button class="js-remove buttons__remove">🗑</button>
                 </li>`;
         const tasksElement = document.querySelector(".js-tasks")
